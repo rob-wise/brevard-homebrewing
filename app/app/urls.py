@@ -17,12 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from pages import views
 
 urlpatterns = [
-    path('', views.HomePageView.as_view(), name='home'),
-    path('about', views.AboutsPageView.as_view(), name='about'),
-    path('events', views.EventsPageView.as_view(), name='events')
+    path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
@@ -30,8 +27,3 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT,
     )
-    urlpatterns += static(
-        settings.STATIC_URL,
-        document_root=settings.STATIC_ROOT,
-    )
-
