@@ -25,7 +25,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "18.191.219.240",
+    "brevardhomebrew.com"
+]
 ALLOWED_HOSTS.extend(
     filter(
         None,
